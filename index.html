@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#apple{width:1080px; height:1080px ;
+				display : block ; }
+		body{background : white; }
+		#txt{font-size :10rem ; color:red; }
+	</style>
+</head>
+<body>
+	<video src="large_2x.mp4" id="apple"></video>	
+	<button id="but">play</button>
+	<div id="txt"> 동영상이 시작되지 않았습니다. </div>
+	<script type="text/javascript">
+		//but를 클릭하면 apple를 플레이하시오.
+		let playstate = "stop" ;
+		but.onclick=function(){
+			if(playstate	== "stop"){	
+				apple.play();	 
+				document.body.style.background = "black" ;
+				txt.innerHTML = "영상이 재생중입니다.";	
+				but.innerHTML = "stop" ;
+				but.style.background="red";
+				playstate="play" ;	
+			}else if(playstate == "play"){
+				apple.pause();
+				but.innerHTML = "play" ;
+				but.style.background="green";
+				document.body.style.background="none";
+				playstate="stop"
+
+			}
+		}
+	</script>
+
+</body>
+</html>
